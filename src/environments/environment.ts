@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // firebaseAPIKey: 'AIzaSyAc83Ksq-xZ5FMNfluWtBV5UCJPXG84lQo' you will import this to the auth service and at it to the API url as so + environment.firebaseAPIKey.
 };
 
 /*

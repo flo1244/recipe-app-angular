@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-5">
+        <!-- now that we are listening to recipeWasSelected we need to store it in our recipes Comp TS file -->
+        <!-- here we are assigning selectedRecipe to $event once it is occured. a value will be set once the event occurred. now we can pass 
+        this info to the recipe detail component -->
+        <!-- <app-recipe-list (recipeWasSelected)="selectedRecipe = $event"></app-recipe-list> -->
+        <app-recipe-list></app-recipe-list>
+    </div>
+    <!-- *ngIf here we want to display it only if recipe is selected -->
+    <div class="col-md-5">
+        <!-- here we want to display it only if recipe is selected . If not selected will display warning message
+        <app-recipe-detail *ngIf="selectedRecipe;  else infoText"
+        [recipe]="selectedRecipe"></app-recipe-detail>
+        <ng-template #infoText>
+            <p>Please select a Recipe!</p>
+        </ng-template> -->
+        <!-- replaced with our router-outlet  -->
+        <router-outlet></router-outlet>
+    </div>
+</div>

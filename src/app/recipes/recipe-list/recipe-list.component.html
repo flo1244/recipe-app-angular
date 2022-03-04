@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-xs-12">
+       <button class="btn btn-success" (click)="onNewRecipe()">New Recipe</button> 
+       <hr>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <!-- we can now move this to our recipe item component now that we know how to pass data to component. -->
+       
+        <app-recipe-item *ngFor="let recipeEl of recipes; let i = index"
+        [recipe]="recipeEl"
+        [index]="i"
+        ></app-recipe-item>
+        <!-- passing id i to the app recipe item and bind it the to id property there which we just created in TS -->
+        <!-- (recipeSelected)="onRecipeSelected(recipeEl)" was remove from <app-recipe-item> now we have it in service -->
+    <!-- Note "recipe" is referring to the one in recipe item comp [recipe]='recipe' here we are binding our recipe referring to the property in the single recipe item to the current loop iteration -->
+    <!-- in recipeSelected we emit an event because we want to reach our recipes component which is the one implementing the recipe list. the method is placed in our recipe-list component ts file .
+    we need some extra info  which recipe  was selected that that is why we pass the recipeEl-->
+    </div>
+</div>
+

@@ -1,0 +1,24 @@
+
+<!-- Our goal here is to get ngFor loop and remove from inside the item and back into the recipe list component  then pass down the 
+individual recipe of each iteration to that component so that we can still output  recipe name and so on-->
+<!-- Our next goal is when the link is clicked we emit a event informing our parent  component that this recipe was selected.
+add click listener to the link -->
+<!-- now we are binding our routerlink  with square brackets to pass array which allows configure segment for segment of the path. using relative path because  we already at recipes/ 
+routerLinkActive selects our active link dynamically -->
+<a  style ="cursor: pointer;" class="list-group-item clearfix"  [routerLink]="[index]" routerLinkActive="active">
+        <!-- cut ngFor loop here *ngFor="let recipe of recipes" and paste it in recipe item selector in recipe list component
+        but now we are unable to target recipe. 
+        -->
+        <!-- (click)= "onSelected()" removed from here we are no longer passing the value here but through routing.  -->
+        
+            <div class="pull-left">
+                <h4 class="list-group-item-heading">{{recipe.name}}</h4>
+                <p class="list-group-item-text">{{recipe.description}}</p>
+            </div>
+            <span class="pull-right">
+                <img [src]= "recipe.imagePath" 
+                alt= "{{recipe.name}}" 
+                class="image-responsive" 
+                style="max-height: 50px;">
+            </span>
+        </a>
