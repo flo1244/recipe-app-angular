@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 // import { ShoppingListModule } from './shopping-list/shopping-list.module'; LAZY LOADING
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 // import { AuthModule } from './auth/auth.module';LAZY LOADING
 
 
@@ -46,6 +47,12 @@ import { CoreModule } from './core.module';
     SharedModule,
     CoreModule,
     // AuthModule * LAZY LOADING
+
+    
+  ],
+
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   // providers: [
   //   ShoppingListService,
